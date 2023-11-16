@@ -26,28 +26,28 @@ func TestGeneratePaseto(t *testing.T) {
 func TestUpdateData(t *testing.T) {
 	data := LonLatProperties{
 		Type:   "Polygon",
-		Name:   "lodons",
+		Name:   "rizki",
 		Volume: "1",
 	}
-	up := UpdateNameGeo("MONGOSTRING", "dbgis", context.Background(), data)
+	up := UpdateNameGeo("MONGOSTRING", "dbgismongo", context.Background(), data)
 	fmt.Println(up)
 }
 
 func TestDeleteDataGeo(t *testing.T) {
 	data := LonLatProperties{
 		Type:   "Polygon",
-		Name:   "iyas",
+		Name:   "rizki",
 		Volume: "1",
 	}
-	up := DeleteDataGeo("MONGOSTRING", "dbgis", context.Background(), data)
+	up := DeleteDataGeo("MONGOSTRING", "dbgismongo", context.Background(), data)
 	fmt.Println(up)
 }
 
 func TestInsertUser(t *testing.T) {
-	conn := GetConnectionMongo("MONGOSTRING", "dbgis")
+	conn := GetConnectionMongo("MONGOSTRING", "dbgismongo")
 	pass, _ := pasproj.HashPass("testpass")
 	data := RegisterStruct{
-		Username: "geogisiki",
+		Username: "gisiki",
 		Password: pass,
 	}
 	ins := InsertUserdata(conn, data.Username, data.Password)
